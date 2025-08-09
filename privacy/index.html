@@ -8,15 +8,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#0b0b0b; --fg:#f7f7f7; --muted:#bcbcbc; }
+    :root { --bg:#0b0b0b; --fg:#f7f7f7; --muted:#bcbcbc; --line:#1f1f1f; --link:#46d3ff; }
+    *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--fg)}
-    header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #1f1f1f}
-    a{color:#46d3ff;text-decoration:none}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+    a{color:var(--link);text-decoration:none}
     main{max-width:860px;margin:0 auto;padding:40px 20px}
     h1{font-size:34px;margin:0 0 10px}
     h2{margin:26px 0 10px}
     p,li{color:var(--muted);line-height:1.7}
+    ul{padding-left:20px;margin:8px 0 0}
     .back{opacity:.85} .back:hover{opacity:1}
+    .meta{color:var(--muted)}
+    footer{max-width:860px;margin:24px auto 40px;padding:0 20px;color:#9a9a9a;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -27,49 +31,58 @@
   </header>
 
   <main>
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: <span id="d"></span></em></p>
+    <h1>Privacy Policy – Food Bird</h1>
+    <p class="meta"><em>Last updated: <span id="updated"></span></em></p>
 
-    <!-- ===== Paste your policy below this line ===== -->
-    <h2>1. Introduction</h2>
-    <p>Food Bird (“we”, “us”, or “our”) respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you use foodbird.app.</p>
+    <p>Food Bird (“we”, “our”, “us”) aggregates publicly available restaurant information to help you discover and compare delivery options. We do not sell personal data.</p>
 
-    <h2>2. Information We Collect</h2>
+    <h2>Information We Collect</h2>
     <ul>
-      <li>Basic usage data (pages viewed, device type) for analytics.</li>
-      <li>Contact information you voluntarily provide (e.g., email) if you reach out.</li>
+      <li><strong>Account info:</strong> name, email (if you sign in)</li>
+      <li><strong>Usage data:</strong> app interactions, device type</li>
+      <li><strong>Optional location:</strong> to show nearby restaurants (with your permission)</li>
     </ul>
 
-    <h2>3. How We Use Information</h2>
+    <h2>How We Use Data</h2>
     <ul>
-      <li>To operate, maintain, and improve the site and future app experience.</li>
-      <li>To respond to inquiries and provide support.</li>
+      <li>Provide and improve app features</li>
+      <li>Show relevant restaurants and offers</li>
+      <li>Prevent fraud and troubleshoot</li>
     </ul>
 
-    <h2>4. Cookies & Analytics</h2>
-    <p>We may use cookies and privacy-friendly analytics (or none at all) to understand usage. You can control cookies in your browser settings.</p>
+    <h2>Data Sharing</h2>
+    <ul>
+      <li>Service providers (hosting, analytics)</li>
+      <li>Legal requests as required by law</li>
+    </ul>
+    <p>We do not sell your personal data.</p>
 
-    <h2>5. Data Sharing</h2>
-    <p>We do not sell personal data. We may share limited data with service providers strictly to operate the site, subject to appropriate safeguards.</p>
+    <h2>Data Retention &amp; Security</h2>
+    <p>We retain data only as long as necessary and use reasonable safeguards. No method is 100% secure.</p>
 
-    <h2>6. Data Retention</h2>
-    <p>We retain information only as long as necessary for the purposes described in this policy or as required by law.</p>
+    <h2>Your Choices</h2>
+    <ul>
+      <li>You may request access, correction, or deletion at: <a href="mailto:info@foodbird.com">info@foodbird.com</a></li>
+      <li>You can disable location in device settings.</li>
+    </ul>
 
-    <h2>7. Your Rights</h2>
-    <p>Depending on your location, you may have rights to access, correct, or delete your data. Contact us to exercise these rights.</p>
+    <h2>Children</h2>
+    <p>Food Bird is not intended for children under 13.</p>
 
-    <h2>8. Contact</h2>
-    <p>Email: <a href="mailto:info@foodbird.com">info@foodbird.com</a></p>
-
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this policy. Material changes will be posted at this URL with an updated date.</p>
-    <!-- ===== End of policy ===== -->
+    <h2>Contact</h2>
+    <p><a href="mailto:info@foodbird.app">info@foodbird.app</a></p>
   </main>
 
+  <footer>
+    <div>© <span id="year"></span> Food Bird</div>
+    <div><a href="/" style="color:inherit">Home</a></div>
+  </footer>
+
   <script>
-    const d = new Date();
-    const month = d.toLocaleString(undefined,{month:'long'});
-    document.getElementById('d').textContent = `${month} ${d.getDate()}, ${d.getFullYear()}`;
+    // Fill dates
+    const now = new Date();
+    document.getElementById('year').textContent = now.getFullYear();
+    document.getElementById('updated').textContent = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
   </script>
 </body>
 </html>
