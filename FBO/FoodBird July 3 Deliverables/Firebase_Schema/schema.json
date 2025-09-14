@@ -1,0 +1,9 @@
+{
+  "collections": [
+    "users",
+    "restaurants",
+    "menus",
+    "orders",
+    "platforms"
+  ]
+}

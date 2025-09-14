@@ -1,0 +1,16 @@
+
+Instructions to install FoodBird_v1.ipa:
+
+Option 1 – Apple Configurator 2 (Mac):
+1. Download from the Mac App Store.
+2. Connect your iPhone XR via USB.
+3. Open Configurator, drag in 'FoodBird_v1.ipa'.
+4. Follow on-screen prompts.
+
+Option 2 – AltStore (Mac/Windows):
+1. Go to https://altstore.io and install AltServer.
+2. Connect your iPhone via USB.
+3. Install AltStore on your phone.
+4. Open AltStore on your iPhone and import 'FoodBird_v1.ipa'.
+
+You're ready to test Food Bird on your iPhone!

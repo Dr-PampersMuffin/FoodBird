@@ -1,0 +1,4 @@
+ERD:
+users → orders
+restaurants → menus
+platforms support menu pricing
